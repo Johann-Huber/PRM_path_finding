@@ -10,8 +10,8 @@
 #include "MapTree.hpp"
 #include "utils.h"
 
-#define IMG_MAP_PATH "/home/johann/Images/robmob_map_simu.png"	// hard
-//#define IMG_MAP_PATH "/home/johann/Images/robmob_map_simu2.png" //easy
+#define IMG_MAP_PATH "robmob_map_simu.png"	// hard
+//#define IMG_MAP_PATH "robmob_map_simu2.png" //easy
 #define NAME_MAP_WIN "Map window"
 
 
@@ -72,7 +72,7 @@ int main(int argc, char **argv)
 	{
 		std::cout << "sp[" << ind << "] : (" << sp[ind].i << "," << sp[ind].j << ")" << std::endl;	
 	}
-
-*/	
+*/
+	
    return 0;
 }

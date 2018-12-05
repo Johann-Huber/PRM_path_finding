@@ -9,9 +9,8 @@
 #include "Map.hpp"
 #include "utils.h"
 
-#define NB_PTS_MAX 200
+#define NB_PTS_MAX 500
 #define CONNEXITY_RATE 3 // distance between two points less than (1/CONNEXITY_RATE) of the map diagonal : connexity 
-#define OBSTACLE_TEST_SAMPLING 20 // nmber of test to perform on every graph edge to determine if there is a collision
 
 class MapTree{
 

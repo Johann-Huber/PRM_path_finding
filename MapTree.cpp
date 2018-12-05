@@ -46,7 +46,7 @@ void MapTree::selectVertices()
 			
 			for(size_t indSlct(0) ; indSlct < selectedVertices.size() ; ++indSlct)
 			{
-				if( isNear(_vertices[ind], selectedVertices[indSlct], _distRef /5 ) )
+				if( isNear(_vertices[ind], selectedVertices[indSlct], _distRef /10 ) )
 				{
 					closePointFound = true;
 					
@@ -115,19 +115,21 @@ void MapTree::initGraph(const Pos& source, const Pos& target)
 
 bool MapTree::isWayClear(const Pos& p1, const Pos& p2)
 {
-	int di(0), dj(0);
-	int sampling(OBSTACLE_TEST_SAMPLING);
-	
+	// sampling
+	float di(0), dj(0);
+	float sampling(std::sqrt((p1.i - p2.i)*(p1.i - p2.i) + (p1.j - p2.j)*(p1.j - p2.j)));
+
 	for(int it(0) ; it < sampling ; ++it)
 	{
 		if( _map.getPxlValBinEroded( p1.i + di, p1.j + dj) == 0 ) // if there is an obstacle
 			return false; 
 		
-		di += (p2.i - p1.i) / sampling;
-		dj += (p2.j - p1.j) / sampling ; 
+		di += (p2.i - p1.i)*1.0 / sampling;
+		dj += (p2.j - p1.j)*1.0 / sampling ; 
 	}
 	return true;
 }
+
 
 
 
